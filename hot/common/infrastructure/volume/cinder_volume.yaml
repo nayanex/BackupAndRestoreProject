@@ -1,0 +1,22 @@
+heat_template_version: 2016-10-14
+
+description: >
+Common cinder volume template without image
+
+parameters:
+  name:
+    type: string
+    label: Volume name
+    description: Volume name
+
+  size:
+    type: number
+    label: Volume size
+    description: Volume size defined in gigabytes
+
+resources:
+  volume:
+    type: OS::Cinder::Volume
+    properties:
+      name: {get_param: name}
+      size: {get_param: size}

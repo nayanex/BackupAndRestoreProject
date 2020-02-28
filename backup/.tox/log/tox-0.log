@@ -1,0 +1,72 @@
+actionid: tox
+msg: packaging
+cmdargs: ['/usr/bin/python', local('/home/eholnay/ENMaaS-Backup/ecm-tools/backup/setup.py'), 'sdist', '--formats=zip', '--dist-dir', local('/home/eholnay/ENMaaS-Backup/ecm-tools/backup/.tox/dist')]
+
+running sdist
+running egg_info
+writing requirements to src/enmaas_bur.egg-info/requires.txt
+writing src/enmaas_bur.egg-info/PKG-INFO
+writing top-level names to src/enmaas_bur.egg-info/top_level.txt
+writing dependency_links to src/enmaas_bur.egg-info/dependency_links.txt
+writing entry points to src/enmaas_bur.egg-info/entry_points.txt
+reading manifest file 'src/enmaas_bur.egg-info/SOURCES.txt'
+writing manifest file 'src/enmaas_bur.egg-info/SOURCES.txt'
+running check
+creating enmaas-bur-1.0.0
+creating enmaas-bur-1.0.0/src
+creating enmaas-bur-1.0.0/src/backup
+creating enmaas-bur-1.0.0/src/backup/config
+creating enmaas-bur-1.0.0/src/enmaas_bur.egg-info
+copying files to enmaas-bur-1.0.0...
+copying README.md -> enmaas-bur-1.0.0
+copying setup.cfg -> enmaas-bur-1.0.0
+copying setup.py -> enmaas-bur-1.0.0
+copying src/backup/__init__.py -> enmaas-bur-1.0.0/src/backup
+copying src/backup/backup_settings.py -> enmaas-bur-1.0.0/src/backup
+copying src/backup/cli.py -> enmaas-bur-1.0.0/src/backup
+copying src/backup/gnupg_manager.py -> enmaas-bur-1.0.0/src/backup
+copying src/backup/local_backup_handler.py -> enmaas-bur-1.0.0/src/backup
+copying src/backup/logger.py -> enmaas-bur-1.0.0/src/backup
+copying src/backup/main.py -> enmaas-bur-1.0.0/src/backup
+copying src/backup/notification_handler.py -> enmaas-bur-1.0.0/src/backup
+copying src/backup/offsite_backup_handler.py -> enmaas-bur-1.0.0/src/backup
+copying src/backup/performance.py -> enmaas-bur-1.0.0/src/backup
+copying src/backup/rsync_manager.py -> enmaas-bur-1.0.0/src/backup
+copying src/backup/thread_pool.py -> enmaas-bur-1.0.0/src/backup
+copying src/backup/utils.py -> enmaas-bur-1.0.0/src/backup
+copying src/backup/config/config.cfg -> enmaas-bur-1.0.0/src/backup/config
+copying src/enmaas_bur.egg-info/PKG-INFO -> enmaas-bur-1.0.0/src/enmaas_bur.egg-info
+copying src/enmaas_bur.egg-info/SOURCES.txt -> enmaas-bur-1.0.0/src/enmaas_bur.egg-info
+copying src/enmaas_bur.egg-info/dependency_links.txt -> enmaas-bur-1.0.0/src/enmaas_bur.egg-info
+copying src/enmaas_bur.egg-info/entry_points.txt -> enmaas-bur-1.0.0/src/enmaas_bur.egg-info
+copying src/enmaas_bur.egg-info/not-zip-safe -> enmaas-bur-1.0.0/src/enmaas_bur.egg-info
+copying src/enmaas_bur.egg-info/requires.txt -> enmaas-bur-1.0.0/src/enmaas_bur.egg-info
+copying src/enmaas_bur.egg-info/top_level.txt -> enmaas-bur-1.0.0/src/enmaas_bur.egg-info
+Writing enmaas-bur-1.0.0/setup.cfg
+creating '.tox/dist/enmaas-bur-1.0.0.zip' and adding 'enmaas-bur-1.0.0' to it
+adding 'enmaas-bur-1.0.0/PKG-INFO'
+adding 'enmaas-bur-1.0.0/setup.py'
+adding 'enmaas-bur-1.0.0/README.md'
+adding 'enmaas-bur-1.0.0/setup.cfg'
+adding 'enmaas-bur-1.0.0/src/enmaas_bur.egg-info/PKG-INFO'
+adding 'enmaas-bur-1.0.0/src/enmaas_bur.egg-info/not-zip-safe'
+adding 'enmaas-bur-1.0.0/src/enmaas_bur.egg-info/entry_points.txt'
+adding 'enmaas-bur-1.0.0/src/enmaas_bur.egg-info/requires.txt'
+adding 'enmaas-bur-1.0.0/src/enmaas_bur.egg-info/dependency_links.txt'
+adding 'enmaas-bur-1.0.0/src/enmaas_bur.egg-info/SOURCES.txt'
+adding 'enmaas-bur-1.0.0/src/enmaas_bur.egg-info/top_level.txt'
+adding 'enmaas-bur-1.0.0/src/backup/rsync_manager.py'
+adding 'enmaas-bur-1.0.0/src/backup/notification_handler.py'
+adding 'enmaas-bur-1.0.0/src/backup/main.py'
+adding 'enmaas-bur-1.0.0/src/backup/performance.py'
+adding 'enmaas-bur-1.0.0/src/backup/local_backup_handler.py'
+adding 'enmaas-bur-1.0.0/src/backup/cli.py'
+adding 'enmaas-bur-1.0.0/src/backup/__init__.py'
+adding 'enmaas-bur-1.0.0/src/backup/backup_settings.py'
+adding 'enmaas-bur-1.0.0/src/backup/offsite_backup_handler.py'
+adding 'enmaas-bur-1.0.0/src/backup/gnupg_manager.py'
+adding 'enmaas-bur-1.0.0/src/backup/utils.py'
+adding 'enmaas-bur-1.0.0/src/backup/logger.py'
+adding 'enmaas-bur-1.0.0/src/backup/thread_pool.py'
+adding 'enmaas-bur-1.0.0/src/backup/config/config.cfg'
+removing 'enmaas-bur-1.0.0' (and everything under it)

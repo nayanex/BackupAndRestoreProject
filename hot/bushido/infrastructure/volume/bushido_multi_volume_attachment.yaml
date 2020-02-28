@@ -1,0 +1,30 @@
+heat_template_version: 2016-10-14
+
+description: >
+Template to attach volume to Bushido server instance based on index in a list of volume ids.
+
+parameters:
+
+  index:
+    type: string
+    label: Volume index
+    description: Volume index used to get volume id from volume list
+
+  volume_ids:
+    type: comma_delimited_list
+    label: Bushido data volume ids
+    description: Bushido data volume ids in list to attach
+
+  server:
+    type: string
+    label: Bushido server instance uuid
+    description: Bushido server instance uuid to attach volumes to
+
+
+resources:
+
+  volume_attachment:
+    type: OS::Cinder::VolumeAttachment
+    properties:
+      volume_id: {get_param: [volume_ids, get_param: index]}
+      instance_uuid: {get_resource: server}

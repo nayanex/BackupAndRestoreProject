@@ -1,0 +1,117 @@
+heat_template_version: 2016-10-14
+
+description: >
+Template to create volumes for Bushido application.
+
+parameters:
+
+  deployment_id:
+    type: string
+    label: Bushido deployment id
+    description: The deployment id for Bushido application instances
+
+  root_volume_size:
+    type: number
+    label: Bushido root volume size
+    description: The root volume size for Bushido application instances
+    constraints:
+      - range: { min: 50, max: 500 }
+        description: Volume size defined in gigabytes
+    default: 50
+
+  root_volume_image:
+    type: string
+    label: Bushido root volume image name
+    description: The volume image name for Bushido application instance
+
+  data_volume_size:
+    type: number
+    label: Bushido data volumes size
+    description: The data volumes size for Bushido application instances
+    constraints:
+      - range: { min: 80, max: 500 }
+        description: Volume size defined in gigabytes
+    default: 80
+
+resources:
+
+  root_volume:
+    type: ../../../common/infrastructure/volume/cinder_volume_image.yaml
+    properties:
+      name:
+        str_replace:
+          template: $deployment_id-$volume_name
+          params:
+            $deployment_id : { get_param: deployment_id }
+            $volume_name: 'bushido-vol-root'
+      size: { get_param: root_volume_size }
+      image: { get_param: root_volume_image }
+
+  data_volumes:
+    type: OS::Heat::ResourceGroup
+    properties:
+      count: 3
+      resource_def:
+        type: ../../../common/infrastructure/volume/cinder_volume.yaml
+        name:
+          str_replace:
+            template: $deployment_id-$volume_name$index
+            params:
+              $deployment_id : { get_param: deployment_id }
+              $volume_name: 'bushido-vol-root'
+              $index: '%index%'
+        size: { get_param: data_volume_size }
+
+  log_volume:
+    type: ../../../common/infrastructure/volume/cinder_volume.yaml
+    properties:
+      name:
+        str_replace:
+          template: $deployment_id-$volume_name
+          params:
+            $deployment_id : { get_param: deployment_id }
+            $volume_name: 'bushido-vol-log'
+      size: { get_param: data_volume_size }
+
+  message_volumes:
+    type: ../../../common/infrastructure/volume/cinder_volume.yaml
+    properties:
+      name:
+        str_replace:
+          template: $deployment_id-$volume_name
+          params:
+            $deployment_id : { get_param: deployment_id }
+            $volume_name: 'bushido-vol-message'
+      size: { get_param: data_volume_size }
+
+  elastic_volumes:
+    type: ../../../common/infrastructure/volume/cinder_volume.yaml
+    properties:
+      name:
+        str_replace:
+          template: $deployment_id-$volume_name
+          params:
+            $deployment_id : { get_param: deployment_id }
+            $volume_name: 'bushido-vol-elastic'
+      size: { get_param: data_volume_size }
+
+outputs:
+  root_volume_id:
+    description: The root volume ID for Bushido application instances
+    value: {get_resource: root_volume}
+
+  data_volumes_id:
+      description: The data volume IDs for Bushido application instances
+      value: {get_attr: [data_volumes, volume]}
+
+  log_volumes_id:
+    description: The log volume ID for Bushido application instances
+    value: {get_resource: log_volume}
+
+  message_volumes_id:
+    description: The message volume ID for Bushido application instances
+    value: {get_resource: message_volume}
+
+  elastic_volumes_id:
+    description: The elastic volume ID for Bushido application instances
+    value: {get_resource: elastic_volume}

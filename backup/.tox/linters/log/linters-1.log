@@ -1,0 +1,69 @@
+actionid: linters
+msg: getenv
+cmdargs: ['/home/eholnay/ENMaaS-Backup/ecm-tools/backup/.tox/linters/bin/python', '-m', 'pip', 'install', 'flake8', 'flake8-docstrings>=0.2.7', 'flake8-import-order>=0.9', 'pep8-naming', 'flake8-colors', 'pyflakes', 'pylint', 'bandit']
+
+Collecting flake8
+  Downloading https://files.pythonhosted.org/packages/b9/dc/14e9d94c770b8c4ef584e906c7583e74864786a58d47de101f2767d50c0b/flake8-3.5.0-py2.py3-none-any.whl (69kB)
+Collecting flake8-docstrings>=0.2.7
+  Downloading https://files.pythonhosted.org/packages/4e/ab/927dada116644e776c2668175d35545786f8a5120a9bdbfaaba2aab71687/flake8_docstrings-1.3.0-py2.py3-none-any.whl
+Collecting flake8-import-order>=0.9
+  Downloading https://files.pythonhosted.org/packages/9c/59/f3028e0a02e714997aca57c5936cc6b2a0a35d5c809bef7421c8563800a2/flake8_import_order-0.18-py2.py3-none-any.whl
+Collecting pep8-naming
+  Downloading https://files.pythonhosted.org/packages/39/bb/a34544c789e7e5458ed2db6cbd1c8e227bb01e4ce03a0b15ec4ec93e486d/pep8_naming-0.7.0-py2.py3-none-any.whl
+Collecting flake8-colors
+  Downloading https://files.pythonhosted.org/packages/04/62/1afebe73ea28b363c80aab892298c83f510c65ae079c2c8129f0ea50db46/flake8-colors-0.1.6.tar.gz
+Collecting pyflakes
+  Downloading https://files.pythonhosted.org/packages/44/98/af7a72c9a543b1487d92813c648cb9b9adfbc96faef5455d60f4439aa99b/pyflakes-2.0.0-py2.py3-none-any.whl (53kB)
+Collecting pylint
+  Downloading https://files.pythonhosted.org/packages/6e/c2/1e97c238877b6a86562d32297eb33a6670b6220e8ec0ca85f67b66dc893f/pylint-2.1.1-py3-none-any.whl (737kB)
+Collecting bandit
+  Downloading https://files.pythonhosted.org/packages/da/94/34afbe0c28b0c35f5116955c86c20599b3c732ddc1b2c452f190760ebfbf/bandit-1.5.1-py2.py3-none-any.whl (121kB)
+Collecting mccabe<0.7.0,>=0.6.0 (from flake8)
+  Using cached https://files.pythonhosted.org/packages/87/89/479dc97e18549e21354893e4ee4ef36db1d237534982482c3681ee6e7b57/mccabe-0.6.1-py2.py3-none-any.whl
+Collecting pycodestyle<2.4.0,>=2.0.0 (from flake8)
+  Downloading https://files.pythonhosted.org/packages/e4/81/78fe51eb4038d1388b7217dd63770b0f428370207125047312886c923b26/pycodestyle-2.3.1-py2.py3-none-any.whl (45kB)
+Collecting pydocstyle>=2.1 (from flake8-docstrings>=0.2.7)
+  Downloading https://files.pythonhosted.org/packages/43/8a/f1141af0c8406788a5c38ad5001d4163d903b5384a6517239d2ac42734c8/pydocstyle-2.1.1-py3-none-any.whl
+Collecting flake8-polyfill (from flake8-docstrings>=0.2.7)
+  Downloading https://files.pythonhosted.org/packages/86/b5/a43fed6fd0193585d17d6faa7b85317d4461f694aaed546098c69f856579/flake8_polyfill-1.0.2-py2.py3-none-any.whl
+Requirement already satisfied: setuptools in ./.tox/linters/lib/python3.5/site-packages (from flake8-import-order>=0.9) (40.2.0)
+Collecting astroid>=2.0.0 (from pylint)
+  Downloading https://files.pythonhosted.org/packages/19/92/6f6d3591c429dbdb31c18d8476ba1af08d5973d7cc09f66346109e9de7fb/astroid-2.0.4-py3-none-any.whl (172kB)
+Collecting isort>=4.2.5 (from pylint)
+  Downloading https://files.pythonhosted.org/packages/1f/2c/22eee714d7199ae0464beda6ad5fedec8fee6a2f7ffd1e8f1840928fe318/isort-4.3.4-py3-none-any.whl (45kB)
+Collecting six>=1.10.0 (from bandit)
+  Downloading https://files.pythonhosted.org/packages/67/4b/141a581104b1f6397bfa78ac9d43d8ad29a7ca43ea90a2d863fe3056e86a/six-1.11.0-py2.py3-none-any.whl
+Collecting PyYAML>=3.12 (from bandit)
+  Downloading https://files.pythonhosted.org/packages/9e/a3/1d13970c3f36777c583f136c136f804d70f500168edc1edea6daa7200769/PyYAML-3.13.tar.gz (270kB)
+Collecting GitPython>=1.0.1 (from bandit)
+  Downloading https://files.pythonhosted.org/packages/fe/e5/fafe827507644c32d6dc553a1c435cdf882e0c28918a5bab29f7fbebfb70/GitPython-2.1.11-py2.py3-none-any.whl (448kB)
+Collecting stevedore>=1.20.0 (from bandit)
+  Downloading https://files.pythonhosted.org/packages/a1/d9/93a975469c53a9ee85de9ec0deb12345aa777748b4c263860668592344fe/stevedore-1.29.0-py2.py3-none-any.whl
+Collecting snowballstemmer (from pydocstyle>=2.1->flake8-docstrings>=0.2.7)
+  Downloading https://files.pythonhosted.org/packages/d4/6c/8a935e2c7b54a37714656d753e4187ee0631988184ed50c0cf6476858566/snowballstemmer-1.2.1-py2.py3-none-any.whl (64kB)
+Collecting typed-ast; python_version < "3.7" and implementation_name == "cpython" (from astroid>=2.0.0->pylint)
+  Downloading https://files.pythonhosted.org/packages/5b/4e/79e873aa89b8038ca6474c00afe96f9468973b604e7f737cb82697a680c0/typed_ast-1.1.0-cp35-cp35m-manylinux1_x86_64.whl (724kB)
+Collecting lazy-object-proxy (from astroid>=2.0.0->pylint)
+  Downloading https://files.pythonhosted.org/packages/10/88/d7b8274edf912be71d73a1e5de7988f62b63d9e88e591da2e6f921ab69e6/lazy_object_proxy-1.3.1-cp35-cp35m-manylinux1_x86_64.whl (55kB)
+Collecting wrapt (from astroid>=2.0.0->pylint)
+  Using cached https://files.pythonhosted.org/packages/a0/47/66897906448185fcb77fc3c2b1bc20ed0ecca81a0f2f88eda3fc5a34fc3d/wrapt-1.10.11.tar.gz
+Collecting gitdb2>=2.0.0 (from GitPython>=1.0.1->bandit)
+  Downloading https://files.pythonhosted.org/packages/a9/fb/d3afc4e2a8d506a07af19f125f7a473ae1b56f942ed2ba80776eb8ae23b1/gitdb2-2.0.4-py2.py3-none-any.whl (62kB)
+Collecting pbr!=2.1.0,>=2.0.0 (from stevedore>=1.20.0->bandit)
+  Downloading https://files.pythonhosted.org/packages/69/1c/98cba002ed975a91a0294863d9c774cc0ebe38e05bbb65e83314550b1677/pbr-4.2.0-py2.py3-none-any.whl (100kB)
+Collecting smmap2>=2.0.0 (from gitdb2>=2.0.0->GitPython>=1.0.1->bandit)
+  Downloading https://files.pythonhosted.org/packages/0f/14/e3112808b727f72df9531fc2f00b84d4966e66001748b6883a21c767e902/smmap2-2.0.4-py2.py3-none-any.whl
+Building wheels for collected packages: flake8-colors, PyYAML, wrapt
+  Running setup.py bdist_wheel for flake8-colors: started
+  Running setup.py bdist_wheel for flake8-colors: finished with status 'done'
+  Stored in directory: /home/eholnay/.cache/pip/wheels/5d/e8/4d/c4136580d4b95ef6c4a9e7fc10dc7e742fb8bcb97cc88dbb11
+  Running setup.py bdist_wheel for PyYAML: started
+  Running setup.py bdist_wheel for PyYAML: finished with status 'done'
+  Stored in directory: /home/eholnay/.cache/pip/wheels/ad/da/0c/74eb680767247273e2cf2723482cb9c924fe70af57c334513f
+  Running setup.py bdist_wheel for wrapt: started
+  Running setup.py bdist_wheel for wrapt: finished with status 'done'
+  Stored in directory: /home/eholnay/.cache/pip/wheels/48/5d/04/22361a593e70d23b1f7746d932802efe1f0e523376a74f321e
+Successfully built flake8-colors PyYAML wrapt
+flake8 3.5.0 has requirement pyflakes<1.7.0,>=1.5.0, but you'll have pyflakes 2.0.0 which is incompatible.
+Installing collected packages: mccabe, pycodestyle, pyflakes, flake8, snowballstemmer, six, pydocstyle, flake8-polyfill, flake8-docstrings, flake8-import-order, pep8-naming, flake8-colors, typed-ast, lazy-object-proxy, wrapt, astroid, isort, pylint, PyYAML, smmap2, gitdb2, GitPython, pbr, stevedore, bandit
+Successfully installed GitPython-2.1.11 PyYAML-3.13 astroid-2.0.4 bandit-1.5.1 flake8-3.5.0 flake8-colors-0.1.6 flake8-docstrings-1.3.0 flake8-import-order-0.18 flake8-polyfill-1.0.2 gitdb2-2.0.4 isort-4.3.4 lazy-object-proxy-1.3.1 mccabe-0.6.1 pbr-4.2.0 pep8-naming-0.7.0 pycodestyle-2.3.1 pydocstyle-2.1.1 pyflakes-2.0.0 pylint-2.1.1 six-1.11.0 smmap2-2.0.4 snowballstemmer-1.2.1 stevedore-1.29.0 typed-ast-1.1.0 wrapt-1.10.11

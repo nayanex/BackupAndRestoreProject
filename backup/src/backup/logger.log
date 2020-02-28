@@ -1,0 +1,128 @@
+2018-10-10 13:41:07,670 - local_backup_handler_CUSTOMER0 - INFO - Getting the list of valid backups from '/home/eholnay/ENMaaS-Backup/ecm-tools/backup/tests/unit/rpc_bkps/customer_deployment_0'.
+2018-10-10 13:57:40,282 - local_backup_handler_CUSTOMER0 - INFO - Getting the list of valid backups from '/home/eholnay/ENMaaS-Backup/ecm-tools/backup/tests/unit/rpc_bkps/customer_deployment_0'.
+2018-10-10 13:58:26,382 - local_backup_handler_CUSTOMER0 - INFO - Getting the list of valid backups from '/home/eholnay/ENMaaS-Backup/ecm-tools/backup/tests/unit/rpc_bkps/customer_deployment_0'.
+2018-10-10 13:59:36,310 - local_backup_handler_CUSTOMER0 - INFO - Getting the list of valid backups from '/home/eholnay/ENMaaS-Backup/ecm-tools/backup/tests/unit/rpc_bkps/customer_deployment_0'.
+2018-10-10 14:04:45,016 - local_backup_handler_CUSTOMER0 - INFO - Getting the list of valid backups from '/home/eholnay/ENMaaS-Backup/ecm-tools/backup/tests/unit/rpc_bkps/customer_deployment_0'.
+2018-10-10 14:04:57,867 - local_backup_handler_CUSTOMER0 - INFO - Getting the list of valid backups from '/home/eholnay/ENMaaS-Backup/ecm-tools/backup/tests/unit/rpc_bkps/customer_deployment_0'.
+2018-10-10 15:06:30,268 - local_backup_handler_CUSTOMER0 - INFO - Getting the list of valid backups from '/home/eholnay/ENMaaS-Backup/ecm-tools/backup/tests/unit/rpc_bkps/customer_deployment_0'.
+2018-10-10 15:37:41,821 - local_backup_handler_CUSTOMER0 - INFO - Getting the list of valid backups from '/home/eholnay/ENMaaS-Backup/ecm-tools/backup/tests/unit/rpc_bkps/customer_deployment_0'.
+2018-10-10 15:44:35,195 - local_backup_handler_CUSTOMER0 - INFO - Getting the list of valid backups from '/home/eholnay/ENMaaS-Backup/ecm-tools/backup/tests/unit/rpc_bkps/customer_deployment_0'.
+2018-10-10 15:59:19,195 - local_backup_handler_CUSTOMER0 - INFO - Getting the list of valid backups from '/home/eholnay/ENMaaS-Backup/ecm-tools/backup/tests/unit/rpc_bkps/customer_deployment_0'.
+2018-10-10 16:02:09,443 - local_backup_handler_CUSTOMER0 - INFO - Getting the list of valid backups from '/home/eholnay/ENMaaS-Backup/ecm-tools/backup/tests/unit/rpc_bkps/customer_deployment_0'.
+2018-10-10 16:06:13,508 - local_backup_handler_CUSTOMER0 - ERROR - Invalid backup source path '/home/eholnay/ENMaaS-Backup/ecm-tools/backup/tests/unit/rpc_bkps/no_customer_deployment'.
+2018-10-10 16:06:39,752 - local_backup_handler_CUSTOMER0 - ERROR - Invalid backup source path '/home/eholnay/ENMaaS-Backup/ecm-tools/backup/tests/unit/rpc_bkps/no_customer_deployment'.
+2018-10-10 16:07:04,770 - local_backup_handler_CUSTOMER0 - ERROR - Invalid backup source path '/home/eholnay/ENMaaS-Backup/ecm-tools/backup/tests/unit/rpc_bkps/no_customer_deployment'.
+2018-10-10 16:08:26,689 - local_backup_handler_CUSTOMER0 - ERROR - Invalid backup source path '/home/eholnay/ENMaaS-Backup/ecm-tools/backup/tests/unit/rpc_bkps/no_customer_deployment'.
+2018-10-10 17:35:55,768 - local_backup_handler_CUSTOMER0 - INFO - Getting the list of valid backups from '/home/eholnay/ENMaaS-Backup/ecm-tools/backup/tests/unit/rpc_bkps/customer_deployment_0'.
+2018-10-10 17:35:59,951 - local_backup_handler_CUSTOMER0 - ERROR - Invalid backup source path '/home/eholnay/ENMaaS-Backup/ecm-tools/backup/tests/unit/rpc_bkps/no_customer_deployment'.
+2018-10-10 17:49:49,301 - local_backup_handler_CUSTOMER1 - INFO - Getting the list of valid backups from '/home/eholnay/ENMaaS-Backup/ecm-tools/backup/tests/unit/rpc_bkps/customer_deployment_1'.
+2018-10-10 17:51:01,182 - local_backup_handler_CUSTOMER1 - INFO - Getting the list of valid backups from '/home/eholnay/ENMaaS-Backup/ecm-tools/backup/tests/unit/rpc_bkps/customer_deployment_1'.
+2018-10-11 10:10:15,190 - local_backup_handler_CUSTOMER0 - INFO - Getting the list of valid backups from '/home/eholnay/ENMaaS-Backup/ecm-tools/backup/tests/unit/rpc_bkps/customer_deployment_0'.
+2018-10-11 10:10:19,360 - local_backup_handler_CUSTOMER0 - ERROR - Invalid backup source path '/home/eholnay/ENMaaS-Backup/ecm-tools/backup/tests/unit/rpc_bkps/no_customer_deployment'.
+2018-10-11 10:10:24,402 - local_backup_handler_CUSTOMER1 - INFO - Getting the list of valid backups from '/home/eholnay/ENMaaS-Backup/ecm-tools/backup/tests/unit/rpc_bkps/customer_deployment_1'.
+2018-10-11 14:25:31,157 - local_backup_handler_CUSTOMER1 - INFO - Getting the list of valid backups from '/home/eholnay/ENMaaS-Backup/ecm-tools/backup/tests/unit/rpc_bkps/customer_deployment_1'.
+2018-10-11 14:27:03,684 - local_backup_handler_CUSTOMER1 - INFO - Getting the list of valid backups from '/home/eholnay/ENMaaS-Backup/ecm-tools/backup/tests/unit/rpc_bkps/customer_deployment_1'.
+2018-10-11 14:27:38,537 - local_backup_handler_CUSTOMER1 - INFO - Getting the list of valid backups from '/home/eholnay/ENMaaS-Backup/ecm-tools/backup/tests/unit/rpc_bkps/customer_deployment_1'.
+2018-10-11 14:32:08,240 - local_backup_handler_CUSTOMER1 - INFO - Getting the list of valid backups from '/home/eholnay/ENMaaS-Backup/ecm-tools/backup/tests/unit/rpc_bkps/customer_deployment_1'.
+2018-10-11 14:37:00,191 - local_backup_handler_CUSTOMER1 - INFO - Getting the list of valid backups from '/home/eholnay/ENMaaS-Backup/ecm-tools/backup/tests/unit/rpc_bkps/customer_deployment_1'.
+2018-10-11 14:37:27,002 - local_backup_handler_CUSTOMER1 - INFO - Getting the list of valid backups from '/home/eholnay/ENMaaS-Backup/ecm-tools/backup/tests/unit/rpc_bkps/customer_deployment_1'.
+2018-10-11 14:41:33,055 - local_backup_handler_CUSTOMER0 - INFO - Getting the list of valid backups from '/home/eholnay/ENMaaS-Backup/ecm-tools/backup/tests/unit/rpc_bkps/customer_deployment_0'.
+2018-10-11 14:41:36,575 - local_backup_handler_CUSTOMER1 - INFO - Getting the list of valid backups from '/home/eholnay/ENMaaS-Backup/ecm-tools/backup/tests/unit/rpc_bkps/customer_deployment_1'.
+2018-10-11 14:43:20,143 - local_backup_handler_CUSTOMER1 - INFO - Getting the list of valid backups from '/home/eholnay/ENMaaS-Backup/ecm-tools/backup/tests/unit/rpc_bkps/customer_deployment_1'.
+2018-10-11 14:47:38,565 - local_backup_handler_CUSTOMER1 - INFO - Getting the list of valid backups from '/home/eholnay/ENMaaS-Backup/ecm-tools/backup/tests/unit/rpc_bkps/customer_deployment_1'.
+2018-10-11 14:48:13,331 - local_backup_handler_CUSTOMER1 - INFO - Getting the list of valid backups from '/home/eholnay/ENMaaS-Backup/ecm-tools/backup/tests/unit/rpc_bkps/customer_deployment_1'.
+2018-10-11 14:48:36,699 - local_backup_handler_CUSTOMER1 - INFO - Getting the list of valid backups from '/home/eholnay/ENMaaS-Backup/ecm-tools/backup/tests/unit/rpc_bkps/customer_deployment_1'.
+2018-10-11 14:50:16,440 - local_backup_handler_CUSTOMER1 - INFO - Getting the list of valid backups from '/home/eholnay/ENMaaS-Backup/ecm-tools/backup/tests/unit/rpc_bkps/customer_deployment_1'.
+2018-10-11 14:52:05,005 - local_backup_handler_CUSTOMER1 - INFO - Getting the list of valid backups from '/home/eholnay/ENMaaS-Backup/ecm-tools/backup/tests/unit/rpc_bkps/customer_deployment_1'.
+2018-10-11 14:52:14,601 - local_backup_handler_CUSTOMER1 - INFO - Getting the list of valid backups from '/home/eholnay/ENMaaS-Backup/ecm-tools/backup/tests/unit/rpc_bkps/customer_deployment_1'.
+2018-10-11 14:52:32,272 - local_backup_handler_CUSTOMER1 - INFO - Getting the list of valid backups from '/home/eholnay/ENMaaS-Backup/ecm-tools/backup/tests/unit/rpc_bkps/customer_deployment_1'.
+2018-10-11 14:52:45,823 - local_backup_handler_CUSTOMER1 - INFO - Getting the list of valid backups from '/home/eholnay/ENMaaS-Backup/ecm-tools/backup/tests/unit/rpc_bkps/customer_deployment_1'.
+2018-10-11 14:53:09,707 - local_backup_handler_CUSTOMER1 - INFO - Getting the list of valid backups from '/home/eholnay/ENMaaS-Backup/ecm-tools/backup/tests/unit/rpc_bkps/customer_deployment_1'.
+2018-10-11 14:53:42,564 - local_backup_handler_CUSTOMER1 - INFO - Getting the list of valid backups from '/home/eholnay/ENMaaS-Backup/ecm-tools/backup/tests/unit/rpc_bkps/customer_deployment_1'.
+2018-10-11 14:54:31,825 - local_backup_handler_CUSTOMER1 - INFO - Getting the list of valid backups from '/home/eholnay/ENMaaS-Backup/ecm-tools/backup/tests/unit/rpc_bkps/customer_deployment_1'.
+2018-10-11 14:54:35,095 - local_backup_handler_CUSTOMER1 - INFO - Getting the list of valid backups from '/home/eholnay/ENMaaS-Backup/ecm-tools/backup/tests/unit/rpc_bkps/customer_deployment_1'.
+2018-10-11 14:54:49,682 - local_backup_handler_CUSTOMER1 - INFO - Getting the list of valid backups from '/home/eholnay/ENMaaS-Backup/ecm-tools/backup/tests/unit/rpc_bkps/customer_deployment_1'.
+2018-10-11 14:59:04,096 - local_backup_handler_CUSTOMER1 - INFO - Getting the list of valid backups from '/home/eholnay/ENMaaS-Backup/ecm-tools/backup/tests/unit/rpc_bkps/customer_deployment_1'.
+2018-10-11 15:00:49,489 - local_backup_handler_CUSTOMER1 - INFO - Getting the list of valid backups from '/home/eholnay/ENMaaS-Backup/ecm-tools/backup/tests/unit/rpc_bkps/customer_deployment_1'.
+2018-10-11 15:05:21,562 - local_backup_handler_CUSTOMER1 - INFO - Getting the list of valid backups from '/home/eholnay/ENMaaS-Backup/ecm-tools/backup/tests/unit/rpc_bkps/customer_deployment_1'.
+2018-10-11 15:09:31,464 - local_backup_handler_CUSTOMER1 - INFO - Getting the list of valid backups from '/home/eholnay/ENMaaS-Backup/ecm-tools/backup/tests/unit/rpc_bkps/customer_deployment_1'.
+2018-10-11 15:23:20,892 - local_backup_handler_CUSTOMER1 - INFO - Getting the list of valid backups from '/home/eholnay/ENMaaS-Backup/ecm-tools/backup/tests/unit/rpc_bkps/customer_deployment_1'.
+2018-10-11 15:23:20,892 - local_backup_handler_CUSTOMER1 - WARNING - Found a file '/home/eholnay/ENMaaS-Backup/ecm-tools/backup/tests/unit/rpc_bkps/customer_deployment_1/get_timestamp_modified.py' inside backup list folder.
+2018-10-11 15:28:02,667 - local_backup_handler_CUSTOMER1 - INFO - Getting the list of valid backups from '/home/eholnay/ENMaaS-Backup/ecm-tools/backup/tests/unit/rpc_bkps/customer_deployment_1'.
+2018-10-11 15:28:02,669 - local_backup_handler_CUSTOMER1 - WARNING - Found a file '/home/eholnay/ENMaaS-Backup/ecm-tools/backup/tests/unit/rpc_bkps/customer_deployment_1/get_timestamp_modified.py' inside backup list folder.
+2018-10-11 15:28:34,914 - local_backup_handler_CUSTOMER1 - INFO - Getting the list of valid backups from '/home/eholnay/ENMaaS-Backup/ecm-tools/backup/tests/unit/rpc_bkps/customer_deployment_1'.
+2018-10-11 15:28:34,914 - local_backup_handler_CUSTOMER1 - WARNING - Found a file '/home/eholnay/ENMaaS-Backup/ecm-tools/backup/tests/unit/rpc_bkps/customer_deployment_1/get_timestamp_modified.py' inside backup list folder.
+2018-10-11 15:29:12,535 - local_backup_handler_CUSTOMER0 - ERROR - Invalid backup source path '/home/eholnay/ENMaaS-Backup/ecm-tools/backup/tests/unit/rpc_bkps/no_customer_deployment'.
+2018-10-11 15:29:33,278 - local_backup_handler_CUSTOMER1 - INFO - Getting the list of valid backups from '/home/eholnay/ENMaaS-Backup/ecm-tools/backup/tests/unit/rpc_bkps/customer_deployment_1'.
+2018-10-11 15:29:33,280 - local_backup_handler_CUSTOMER1 - WARNING - Found a file '/home/eholnay/ENMaaS-Backup/ecm-tools/backup/tests/unit/rpc_bkps/customer_deployment_1/get_timestamp_modified.py' inside backup list folder.
+2018-10-11 15:31:42,681 - local_backup_handler_CUSTOMER1 - INFO - Getting the list of valid backups from '/home/eholnay/ENMaaS-Backup/ecm-tools/backup/tests/unit/rpc_bkps/customer_deployment_1'.
+2018-10-11 15:31:42,683 - local_backup_handler_CUSTOMER1 - WARNING - Found a file '/home/eholnay/ENMaaS-Backup/ecm-tools/backup/tests/unit/rpc_bkps/customer_deployment_1/get_timestamp_modified.py' inside backup list folder.
+2018-10-11 15:34:35,512 - local_backup_handler_CUSTOMER1 - INFO - Getting the list of valid backups from '/home/eholnay/ENMaaS-Backup/ecm-tools/backup/tests/unit/rpc_bkps/customer_deployment_1'.
+2018-10-11 15:34:35,514 - local_backup_handler_CUSTOMER1 - WARNING - Found a file '/home/eholnay/ENMaaS-Backup/ecm-tools/backup/tests/unit/rpc_bkps/customer_deployment_1/get_timestamp_modified.py' inside backup list folder.
+2018-10-11 15:35:00,748 - local_backup_handler_CUSTOMER1 - INFO - Getting the list of valid backups from '/home/eholnay/ENMaaS-Backup/ecm-tools/backup/tests/unit/rpc_bkps/customer_deployment_1'.
+2018-10-11 15:35:00,750 - local_backup_handler_CUSTOMER1 - WARNING - Found a file '/home/eholnay/ENMaaS-Backup/ecm-tools/backup/tests/unit/rpc_bkps/customer_deployment_1/get_timestamp_modified.py' inside backup list folder.
+2018-10-11 15:36:02,155 - local_backup_handler_CUSTOMER1 - INFO - Getting the list of valid backups from '/home/eholnay/ENMaaS-Backup/ecm-tools/backup/tests/unit/rpc_bkps/customer_deployment_1'.
+2018-10-11 15:36:02,157 - local_backup_handler_CUSTOMER1 - WARNING - Found a file '/home/eholnay/ENMaaS-Backup/ecm-tools/backup/tests/unit/rpc_bkps/customer_deployment_1/get_timestamp_modified.py' inside backup list folder.
+2018-10-11 15:37:04,483 - local_backup_handler_CUSTOMER1 - INFO - Getting the list of valid backups from '/home/eholnay/ENMaaS-Backup/ecm-tools/backup/tests/unit/rpc_bkps/customer_deployment_1'.
+2018-10-11 15:37:25,941 - local_backup_handler_CUSTOMER1 - INFO - Getting the list of valid backups from '/home/eholnay/ENMaaS-Backup/ecm-tools/backup/tests/unit/rpc_bkps/customer_deployment_1'.
+2018-10-11 15:38:58,725 - local_backup_handler_CUSTOMER1 - INFO - Getting the list of valid backups from '/home/eholnay/ENMaaS-Backup/ecm-tools/backup/tests/unit/rpc_bkps/customer_deployment_1'.
+2018-10-11 15:41:31,045 - local_backup_handler_CUSTOMER1 - INFO - Getting the list of valid backups from '/home/eholnay/ENMaaS-Backup/ecm-tools/backup/tests/unit/rpc_bkps/customer_deployment_1'.
+2018-10-11 15:48:49,112 - local_backup_handler_CUSTOMER1 - INFO - Getting the list of valid backups from '/home/eholnay/ENMaaS-Backup/ecm-tools/backup/tests/unit/rpc_bkps/customer_deployment_1'.
+2018-10-11 15:49:49,748 - local_backup_handler_CUSTOMER1 - INFO - Getting the list of valid backups from '/home/eholnay/ENMaaS-Backup/ecm-tools/backup/tests/unit/rpc_bkps/customer_deployment_1'.
+2018-10-11 15:50:10,026 - local_backup_handler_CUSTOMER1 - INFO - Getting the list of valid backups from '/home/eholnay/ENMaaS-Backup/ecm-tools/backup/tests/unit/rpc_bkps/customer_deployment_1'.
+2018-10-11 16:44:58,475 - local_backup_handler_CUSTOMER0 - INFO - Getting the list of valid backups from '/home/eholnay/ENMaaS-Backup/ecm-tools/backup/tests/unit/rpc_bkps/customer_deployment_0'.
+2018-10-11 16:45:01,517 - local_backup_handler_CUSTOMER0 - ERROR - Invalid backup source path '/home/eholnay/ENMaaS-Backup/ecm-tools/backup/tests/unit/rpc_bkps/no_customer_deployment'.
+2018-10-11 16:45:05,335 - local_backup_handler_CUSTOMER1 - INFO - Getting the list of valid backups from '/home/eholnay/ENMaaS-Backup/ecm-tools/backup/tests/unit/rpc_bkps/customer_deployment_1'.
+2018-10-11 16:53:18,624 - local_backup_handler_CUSTOMER1 - INFO - Getting the list of valid backups from '/home/eholnay/ENMaaS-Backup/ecm-tools/backup/tests/unit/rpc_bkps/customer_deployment_1'.
+2018-10-11 16:53:43,242 - local_backup_handler_CUSTOMER2 - INFO - Getting the list of valid backups from '/home/eholnay/ENMaaS-Backup/ecm-tools/backup/tests/unit/rpc_bkps/customer_deployment_2'.
+2018-10-11 17:05:59,408 - local_backup_handler_CUSTOMER3 - INFO - Getting the list of valid backups from '/home/eholnay/ENMaaS-Backup/ecm-tools/backup/tests/unit/rpc_bkps/customer_deployment_3'.
+2018-10-11 17:05:59,411 - local_backup_handler_CUSTOMER3 - WARNING - Backup '/home/eholnay/ENMaaS-Backup/ecm-tools/backup/tests/unit/rpc_bkps/customer_deployment_3/2018-10-05' does not have a success flag. Skipping this one.
+2018-10-11 17:05:59,413 - local_backup_handler_CUSTOMER3 - WARNING - Backup '/home/eholnay/ENMaaS-Backup/ecm-tools/backup/tests/unit/rpc_bkps/customer_deployment_3/2018-10-07' does not have a success flag. Skipping this one.
+2018-10-11 17:19:23,636 - local_backup_handler_CUSTOMER0 - INFO - Getting the list of valid backups from '/home/eholnay/ENMaaS-Backup/ecm-tools/backup/tests/unit/rpc_bkps/customer_deployment_0'.
+2018-10-11 17:19:26,666 - local_backup_handler_CUSTOMER0 - ERROR - Invalid backup source path '/home/eholnay/ENMaaS-Backup/ecm-tools/backup/tests/unit/rpc_bkps/no_customer_deployment'.
+2018-10-11 17:19:29,203 - local_backup_handler_CUSTOMER1 - INFO - Getting the list of valid backups from '/home/eholnay/ENMaaS-Backup/ecm-tools/backup/tests/unit/rpc_bkps/customer_deployment_1'.
+2018-10-11 17:19:33,842 - local_backup_handler_CUSTOMER2 - INFO - Getting the list of valid backups from '/home/eholnay/ENMaaS-Backup/ecm-tools/backup/tests/unit/rpc_bkps/customer_deployment_2'.
+2018-10-11 17:20:53,163 - local_backup_handler_CUSTOMER0 - INFO - Getting the list of valid backups from '/home/eholnay/ENMaaS-Backup/ecm-tools/backup/tests/unit/rpc_bkps/customer_deployment_0'.
+2018-10-11 17:20:55,709 - local_backup_handler_CUSTOMER0 - ERROR - Invalid backup source path '/home/eholnay/ENMaaS-Backup/ecm-tools/backup/tests/unit/rpc_bkps/no_customer_deployment'.
+2018-10-11 17:20:59,031 - local_backup_handler_CUSTOMER1 - INFO - Getting the list of valid backups from '/home/eholnay/ENMaaS-Backup/ecm-tools/backup/tests/unit/rpc_bkps/customer_deployment_1'.
+2018-10-11 17:21:02,023 - local_backup_handler_CUSTOMER2 - INFO - Getting the list of valid backups from '/home/eholnay/ENMaaS-Backup/ecm-tools/backup/tests/unit/rpc_bkps/customer_deployment_2'.
+2018-10-11 17:21:05,629 - local_backup_handler_CUSTOMER3 - INFO - Getting the list of valid backups from '/home/eholnay/ENMaaS-Backup/ecm-tools/backup/tests/unit/rpc_bkps/customer_deployment_3'.
+2018-10-11 17:21:05,630 - local_backup_handler_CUSTOMER3 - WARNING - Backup '/home/eholnay/ENMaaS-Backup/ecm-tools/backup/tests/unit/rpc_bkps/customer_deployment_3/2018-10-05' does not have a success flag. Skipping this one.
+2018-10-11 17:21:05,631 - local_backup_handler_CUSTOMER3 - WARNING - Backup '/home/eholnay/ENMaaS-Backup/ecm-tools/backup/tests/unit/rpc_bkps/customer_deployment_3/2018-10-07' does not have a success flag. Skipping this one.
+2018-10-11 17:26:03,552 - local_backup_handler_CUSTOMER3 - INFO - Getting the list of valid backups from '/home/eholnay/ENMaaS-Backup/ecm-tools/backup/tests/unit/rpc_bkps/customer_deployment_3'.
+2018-10-11 17:26:03,554 - local_backup_handler_CUSTOMER3 - WARNING - Backup '/home/eholnay/ENMaaS-Backup/ecm-tools/backup/tests/unit/rpc_bkps/customer_deployment_3/2018-10-05' does not have a success flag. Skipping this one.
+2018-10-11 17:26:03,556 - local_backup_handler_CUSTOMER3 - WARNING - Backup '/home/eholnay/ENMaaS-Backup/ecm-tools/backup/tests/unit/rpc_bkps/customer_deployment_3/2018-10-07' does not have a success flag. Skipping this one.
+2018-10-11 17:27:54,683 - local_backup_handler_CUSTOMER3 - INFO - Getting the list of valid backups from '/home/eholnay/ENMaaS-Backup/ecm-tools/backup/tests/unit/rpc_bkps/customer_deployment_3'.
+2018-10-11 17:27:54,685 - local_backup_handler_CUSTOMER3 - WARNING - Backup '/home/eholnay/ENMaaS-Backup/ecm-tools/backup/tests/unit/rpc_bkps/customer_deployment_3/2018-10-05' does not have a success flag. Skipping this one.
+2018-10-11 17:27:54,686 - local_backup_handler_CUSTOMER3 - WARNING - Backup '/home/eholnay/ENMaaS-Backup/ecm-tools/backup/tests/unit/rpc_bkps/customer_deployment_3/2018-10-07' does not have a success flag. Skipping this one.
+2018-10-11 17:30:05,841 - local_backup_handler_CUSTOMER3 - INFO - Getting the list of valid backups from '/home/eholnay/ENMaaS-Backup/ecm-tools/backup/tests/unit/rpc_bkps/customer_deployment_3'.
+2018-10-11 17:30:05,844 - local_backup_handler_CUSTOMER3 - WARNING - Backup '/home/eholnay/ENMaaS-Backup/ecm-tools/backup/tests/unit/rpc_bkps/customer_deployment_3/2018-10-05' does not have a success flag. Skipping this one.
+2018-10-11 17:30:05,846 - local_backup_handler_CUSTOMER3 - WARNING - Backup '/home/eholnay/ENMaaS-Backup/ecm-tools/backup/tests/unit/rpc_bkps/customer_deployment_3/2018-10-07' does not have a success flag. Skipping this one.
+2018-10-11 17:30:39,849 - local_backup_handler_CUSTOMER3 - INFO - Getting the list of valid backups from '/home/eholnay/ENMaaS-Backup/ecm-tools/backup/tests/unit/rpc_bkps/customer_deployment_3'.
+2018-10-11 17:30:39,851 - local_backup_handler_CUSTOMER3 - WARNING - Backup '/home/eholnay/ENMaaS-Backup/ecm-tools/backup/tests/unit/rpc_bkps/customer_deployment_3/2018-10-05' does not have a success flag. Skipping this one.
+2018-10-11 17:30:39,852 - local_backup_handler_CUSTOMER3 - WARNING - Backup '/home/eholnay/ENMaaS-Backup/ecm-tools/backup/tests/unit/rpc_bkps/customer_deployment_3/2018-10-07' does not have a success flag. Skipping this one.
+2018-10-11 17:30:55,849 - local_backup_handler_CUSTOMER3 - INFO - Getting the list of valid backups from '/home/eholnay/ENMaaS-Backup/ecm-tools/backup/tests/unit/rpc_bkps/customer_deployment_3'.
+2018-10-11 17:30:55,850 - local_backup_handler_CUSTOMER3 - WARNING - Backup '/home/eholnay/ENMaaS-Backup/ecm-tools/backup/tests/unit/rpc_bkps/customer_deployment_3/2018-10-05' does not have a success flag. Skipping this one.
+2018-10-11 17:30:55,851 - local_backup_handler_CUSTOMER3 - WARNING - Backup '/home/eholnay/ENMaaS-Backup/ecm-tools/backup/tests/unit/rpc_bkps/customer_deployment_3/2018-10-07' does not have a success flag. Skipping this one.
+2018-10-11 17:31:20,778 - local_backup_handler_CUSTOMER3 - INFO - Getting the list of valid backups from '/home/eholnay/ENMaaS-Backup/ecm-tools/backup/tests/unit/rpc_bkps/customer_deployment_3'.
+2018-10-11 17:31:20,779 - local_backup_handler_CUSTOMER3 - WARNING - Backup '/home/eholnay/ENMaaS-Backup/ecm-tools/backup/tests/unit/rpc_bkps/customer_deployment_3/2018-10-05' does not have a success flag. Skipping this one.
+2018-10-11 17:31:20,780 - local_backup_handler_CUSTOMER3 - WARNING - Backup '/home/eholnay/ENMaaS-Backup/ecm-tools/backup/tests/unit/rpc_bkps/customer_deployment_3/2018-10-07' does not have a success flag. Skipping this one.
+2018-10-15 10:52:04,458 - local_backup_handler_CUSTOMER0 - ERROR - Invalid backup source path '/home/eholnay/ENMaaS-Backup/ecm-tools/backup/tests/unit/rpc_bkps/no_customer_deployment'.
+2018-10-15 10:52:05,265 - local_backup_handler_CUSTOMER2 - INFO - Getting the list of valid backups from '/home/eholnay/ENMaaS-Backup/ecm-tools/backup/tests/unit/rpc_bkps/customer_deployment_2'.
+2018-10-15 10:52:06,076 - local_backup_handler_CUSTOMER1 - INFO - Getting the list of valid backups from '/home/eholnay/ENMaaS-Backup/ecm-tools/backup/tests/unit/rpc_bkps/customer_deployment_1'.
+2018-10-15 10:52:06,883 - local_backup_handler_CUSTOMER0 - INFO - Getting the list of valid backups from '/home/eholnay/ENMaaS-Backup/ecm-tools/backup/tests/unit/rpc_bkps/customer_deployment_0'.
+2018-10-15 10:52:07,690 - local_backup_handler_CUSTOMER3 - INFO - Getting the list of valid backups from '/home/eholnay/ENMaaS-Backup/ecm-tools/backup/tests/unit/rpc_bkps/customer_deployment_3'.
+2018-10-15 10:52:07,692 - local_backup_handler_CUSTOMER3 - WARNING - Backup '/home/eholnay/ENMaaS-Backup/ecm-tools/backup/tests/unit/rpc_bkps/customer_deployment_3/2018-10-05' does not have a success flag. Skipping this one.
+2018-10-15 10:52:07,694 - local_backup_handler_CUSTOMER3 - WARNING - Backup '/home/eholnay/ENMaaS-Backup/ecm-tools/backup/tests/unit/rpc_bkps/customer_deployment_3/2018-10-07' does not have a success flag. Skipping this one.
+2018-10-15 21:52:09,952 - local_backup_handler_CUSTOMER0 - INFO - Getting the list of valid backups from '/home/eholnay/ENMaaS-Backup/ecm-tools/backup/tests/unit/rpc_bkps/customer_deployment_0'.
+2018-10-15 21:52:15,087 - local_backup_handler_CUSTOMER0 - ERROR - Invalid backup source path '/home/eholnay/ENMaaS-Backup/ecm-tools/backup/tests/unit/rpc_bkps/no_customer_deployment'.
+2018-10-15 21:52:28,135 - local_backup_handler_CUSTOMER0 - INFO - Getting the list of valid backups from '/home/eholnay/ENMaaS-Backup/ecm-tools/backup/tests/unit/rpc_bkps/customer_deployment_0'.
+2018-10-15 21:52:30,227 - local_backup_handler_CUSTOMER0 - ERROR - Invalid backup source path '/home/eholnay/ENMaaS-Backup/ecm-tools/backup/tests/unit/rpc_bkps/no_customer_deployment'.
+2018-10-15 21:53:57,607 - local_backup_handler_CUSTOMER1 - INFO - Getting the list of valid backups from '/home/eholnay/ENMaaS-Backup/ecm-tools/backup/tests/unit/rpc_bkps/customer_deployment_1'.
+2018-10-15 21:54:31,648 - local_backup_handler_CUSTOMER0 - ERROR - Invalid backup source path '/home/eholnay/ENMaaS-Backup/ecm-tools/backup/tests/unit/rpc_bkps/no_customer_deployment'.
+2018-10-15 21:54:31,649 - local_backup_handler_CUSTOMER2 - INFO - Getting the list of valid backups from '/home/eholnay/ENMaaS-Backup/ecm-tools/backup/tests/unit/rpc_bkps/customer_deployment_2'.
+2018-10-15 21:54:31,650 - local_backup_handler_CUSTOMER2 - WARNING - Backup '/home/eholnay/ENMaaS-Backup/ecm-tools/backup/tests/unit/rpc_bkps/customer_deployment_2/-' does not have a success flag. Skipping this one.
+2018-10-15 21:54:31,654 - local_backup_handler_CUSTOMER1 - INFO - Getting the list of valid backups from '/home/eholnay/ENMaaS-Backup/ecm-tools/backup/tests/unit/rpc_bkps/customer_deployment_1'.
+2018-10-15 21:54:31,657 - local_backup_handler_CUSTOMER0 - INFO - Getting the list of valid backups from '/home/eholnay/ENMaaS-Backup/ecm-tools/backup/tests/unit/rpc_bkps/customer_deployment_0'.
+2018-10-15 21:54:31,659 - local_backup_handler_CUSTOMER3 - INFO - Getting the list of valid backups from '/home/eholnay/ENMaaS-Backup/ecm-tools/backup/tests/unit/rpc_bkps/customer_deployment_3'.
+2018-10-15 21:54:43,724 - local_backup_handler_CUSTOMER1 - INFO - Getting the list of valid backups from '/home/eholnay/ENMaaS-Backup/ecm-tools/backup/tests/unit/rpc_bkps/customer_deployment_1'.

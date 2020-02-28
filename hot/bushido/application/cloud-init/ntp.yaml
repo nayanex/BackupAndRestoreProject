@@ -1,0 +1,31 @@
+#cloud-config
+merge_how: 'list(append)+dict(recurse_array,no_replace)+str()'
+ntp:
+  enabled: true
+  ntp_client: ntpd
+  config:
+     confpath: /etc/ntp.conf
+     check_exe: ntpd
+     packages:
+       - ntpd
+     service_name: ntpd
+     template: |
+       ## template:jinja
+       # Bushido NTP Client config
+       # drift file
+       driftfile /var/lib/ntp/drift
+       # Permit time synchronization with our time source, but do not
+       # permit the source to query or modify the service on this system.
+       restrict default kod nomodify notrap nopeer noquery
+       restrict -6 default kod nomodify notrap nopeer noquery
+       # Permit all access over the loopback interface.  This could
+       # be tightened as well, but to do so would effect some of
+       # the administrative functions.
+       restrict 127.0.0.1
+       restrict -6 ::1
+       # NTP servers
+       {%- if _NTP_SERVERS_ %}# servers
+       {% endif %}
+       {% for server in _NTP_SERVERS_ -%}
+       server {{server}}
+       {% endfor %}

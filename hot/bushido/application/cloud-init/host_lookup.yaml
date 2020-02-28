@@ -1,0 +1,28 @@
+#cloud-config
+merge_how: 'list(append)+dict(recurse_array,no_replace)+str()'
+write_files:
+  - path: /run/cloud-init/host_lookup.sh
+    onwer: root:root
+    permissions: 0744
+    content: |
+      #!/bin/bash
+
+      # Configure hosts entries in '/etc/nsswitch.conf'
+      sed -i '/hosts:/c\' /etc/nsswitch.conf > /dev/null
+      echo "hosts: files" >> /etc/nsswitch.conf
+
+      # Configure hosts file '/etc/hosts'
+      echo "# Repo server internal IP" >> /etc/hosts
+      echo "_REPO_IP_ repo" >> /etc/hosts
+
+      echo "# Internal Bushido Server IP with resolvable names" >> /etc/hosts
+      echo "_BUSHIDO_INTERNAL_IP_ _BUSHIDO_HOSTNAME_ _BUSHIDO_HOSTNAME_.localdomain bushido-int" >> /etc/hosts
+
+      echo "# External Bushido Server IP" >> /etc/hosts
+      echo "_BUSHIDO_EXTERNAL_IP_ bushido-ext" >> /etc/hosts
+
+      # todo: DO WE NEED THIS?!?! WE WILL NOT HAVE LAF ...
+      # echo "# LAF External IP" >> /etc/hosts
+      # echo "_ENM_LAF_1_IP_EXTERNAL_ _LAF_HOSTNAME_" >> /etc/hosts
+runcmd:
+  - /run/cloud-init/host_lookup.sh

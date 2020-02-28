@@ -1,0 +1,200 @@
+heat_template_version: 2016-10-14
+
+description: >
+Template to deploy a multi compute instance of bushido stack.
+
+paramters:
+
+  deployment_id:
+    type: string
+    label: Bushido application deployment name
+    description: Bushido deployment name used as part of hostname.
+
+  vm_name:
+    type: string
+    label: Bushido VM name
+    description: VM name of Bushido application.
+    default: bushido-server
+
+  instance_count:
+    type: string
+    label: Bushido application stack count
+    description: Bushido application stack count for a cluster deployment.
+    default: 3
+
+  server_group_policy:
+    type: comma_delimited_list
+    label: Server group policy
+    description: >
+      Specifies whether the nodes in a cluster should be collocated on the same physical machine (aka. “affinity”)
+      or they should be spread onto as many physical machines as possible (aka. “anti-affinity”).
+    default: [anti-affinity]
+
+  flavor:
+    type: string
+    label: Bushido flavor
+    description: Bushido flavor to use.
+    constraints:
+      - allowed_values: [bushido_server_prod, flavor_8vC20M_RV]
+        description: List of allowed flavors that could be used.
+
+  internal_network_name:
+    type: string
+    label: Bushido vm internal network name
+    description: Name of Bushido vm internal network.
+
+  internal_security_group_name:
+    type: string
+    label: Bushido vm internal network security group name
+    description: Name of Bushido vm internal network security group.
+
+  internal_ip_list:
+    type: comma_delimited_list
+    label: Bushido vm iternal network desired ips
+    description: Bushido vm internal network desired ips.
+
+  internal_netmask:
+    type: string
+    label: Internal netmask address
+    description: External netmask address that is used for Bushido server network configuration.
+
+  internal_gateway:
+    type: string
+    label: Internal gateway address
+    description: External gateway address that is used for Bushido server network configuration.
+
+  ntp_external_servers:
+    type: comma_delimited_list
+    label: A comma separated list of one or more ntp servers
+    description: A comma separated list of one or more ntp servers. These server addresses are used to configure NTP on the Bushido server.
+
+  external_network_name:
+    type: string
+    label: Bushido vm external network name
+    description: Name of Bushido vm external network.
+
+  external_security_group_name:
+    type: string
+    label: Bushido vm external network security group name
+    description: Name of Bushido vm external network security group.
+
+  external_ip_list:
+    type: comma_delimited_list
+    label: Bushido vm external network desired ips
+    description: Bushido vm external network desired ips.
+
+  external_netmask:
+    type: string
+    label: External netmask address
+    description: External netmask address that is available after bushido infrastructure stack is created.
+
+  external_gateway:
+    type: string
+    label: External gateway address
+    description: External gateway address that is available after bushido infrastructure stack is created.
+
+  root_volume_ids:
+    type: comma_delimited_list
+    label: Bushido root volume ids
+    description: Bushido root volume ids to attach. Single volume per stack.
+
+  data_volume_ids:
+    type: comma_delimited_list
+    label: Bushido data volume ids
+    description: Bushido data volume ids list in list to attach. Multiple volumes per stack.
+
+  log_volume_ids:
+    type: comma_delimited_list
+    label: Bushido log volume ids
+    description: Bushido log volume ids to attach. Single volume per stack.
+
+  message_volume_ids:
+    type: comma_delimited_list
+    label: Bushido message volume ids
+    description: Bushido message volume ids to attach. Single volume per stack.
+
+  elastic_volume_ids:
+    type: comma_delimited_list
+    label: Bushido elastic volume ids
+    description: Bushido elastic volume ids to attach. Single volume per stack.
+
+  yum_repo_name:
+    type: string
+    label: ENM yum repo name
+    description: ENM yum repo name where some RPMs are located which need to be installed.
+
+  yum_repo_ip:
+    type: string
+    label: ENM yum repo IP
+    description: ENM yum repo IP where some RPMs are located which need to be installed.
+
+  timezone:
+    type: string
+    label: Timezone to be set for Bushido instance
+    description: Timezone to be set for Bushido instance.
+    default: Europe/Dublin
+
+  username:
+    type: string
+    label: Username to use to acquire auth token
+    description: Username to use to acquire auth token to download bushido artefacts. Located in OpenStack keystonerc.
+
+  password:
+    type: string
+    label: Password to use to acquire auth token
+    description: Username to use to acquire auth token to download bushido artefacts. Located in OpenStack keystonerc.
+    hidden: true
+
+  auth_url:
+    type: string
+    label: Auth url from which to acquire auth token
+    description: Auth url from which to acquire auth token to download bushido artefacts. Located in OpenStack keystonerc.
+
+  project_name:
+    type: string
+    label: Project name to use to acquire auth token
+    description: Project name to use to acquire auth token to download bushido artefacts. Located in OpenStack keystonerc.
+
+resources:
+
+  server_group:
+    type: OS::Nova::ServerGroup
+    properties:
+      name: Bushido server group policies
+      policies: {get_param: server_group_policy}
+
+   server_resource_group:
+      type: OS::Heat::ResourceGroup
+      properties:
+        count: {get_param: instance_count}
+        resource_def:
+          type: bushido_multi_stack_definition.yaml
+          properties:
+            index: '%index%'
+            deployment_id: {get_param: deployment_id}
+            vm_name: {get_param: vm_name}
+            server_group: {get_resource: server_group}
+            flavor: {get_param: flavour}
+            internal_network_name: {get_param: internal_network_name}
+            internal_security_group_name: {get_param: internal_security_group_name}
+            internal_ip_list: {get_param: internal_ip_list}
+            internal_netmask: {get_param: internal_netmask}
+            internal_gateway: {get_param: internal_gateway}
+            ntp_external_servers: {get_param: ntp_external_servers}
+            external_network_name: {get_param: external_network_name}
+            external_security_group_name: {get_param: external_security_group_name}
+            external_ip_list: {get_param: external_ip_list}
+            external_netmask: {get_param: external_netmask}
+            external_gateway: {get_param: external_gateway}
+            root_volume_ids: {get_param: root_volume_ids}
+            data_volume_ids: {get_param: data_volume_ids}
+            log_volume_ids: {get_param: log_volume_ids}
+            message_volume_ids: {get_param: message_volume_ids}
+            elastic_volume_ids: {get_param: elastic_volume_ids}
+            yum_repo_name: {get_param: yum_repo_name}
+            yum_repo_ip: {get_param: yum_repo_ip}
+            timezone: {get_param: timezone}
+            username: {get_param: username}
+            password: {get_param: password}
+            auth_url: {get_param: auth_url}
+            project_name: {get_param: project_name}

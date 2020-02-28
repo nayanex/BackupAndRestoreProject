@@ -1,0 +1,5 @@
+#cloud-config
+merge_how: 'list(append)+dict(recurse_array,no_replace)+str()'
+preserve_hostname: true
+manage_etc_hosts: true
+hostname: _BUSHIDO_HOSTNAME_

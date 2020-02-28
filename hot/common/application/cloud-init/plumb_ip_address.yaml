@@ -1,0 +1,67 @@
+#cloud-config
+merge_how: 'list(append)+dict(recurse_array,no_replace)+str()'
+write_files:
+  - path: /run/cloud-init/plumb_ip_address.sh
+    owner: root:root
+    permissions: '0777'
+    content: |
+      #!/bin/bash
+      SCRIPT_NAME=$(basename ${0})
+      LOG_TAG="PLUMB-INTERFACE-$(hostname -s)"
+      ENM_UTILS=/opt/ericsson/enm-configuration/etc/enm_utils.lib
+      [ ! -f ${ENM_UTILS} ] && { logger "ERROR ${ENM_UTILS} doesn't exist"; exit 1; }
+      source ${ENM_UTILS}
+
+      # Plumbs up additional ethernet interface if exists
+      listOfEthInterface=$( netstat -ia | sed 's/[ \t].*//;/^$/d' | grep eth )
+      for ethernet in $listOfEthInterface; do
+        if [ ! -f /etc/sysconfig/network-scripts/ifcfg-${ethernet} ]; then
+          info "Initialising Interface ${ethernet}"
+          cat /etc/sysconfig/network-scripts/ifcfg-eth0 | sed 's/eth0/'"$ethernet"'/g' > /etc/sysconfig/network-scripts/ifcfg-${ethernet}
+          # can fail so not using function
+          ifup /etc/sysconfig/network-scripts/ifcfg-${ethernet}
+        fi
+      done
+
+      # Plumbs up the ethernet interface
+      info "Plumbing Interface _INTERFACE_"
+
+      # Remove parameters
+      sed -i '/BOOTPROTO=/c\' /etc/sysconfig/network-scripts/ifcfg-_INTERFACE_ > /dev/null
+      sed -i '/NETMASK=/c\' /etc/sysconfig/network-scripts/ifcfg-_INTERFACE_ > /dev/null
+      sed -i '/IPADDR=/c\' /etc/sysconfig/network-scripts/ifcfg-_INTERFACE_ > /dev/null
+      sed -i '/GATEWAY=/c\' /etc/sysconfig/network-scripts/ifcfg-_INTERFACE_ > /dev/null
+
+      echo 'BOOTPROTO=none' >> /etc/sysconfig/network-scripts/ifcfg-_INTERFACE_
+      echo 'NETMASK=_NETMASK_' >> /etc/sysconfig/network-scripts/ifcfg-_INTERFACE_
+      echo 'IPADDR=_ADDRESS_' >> /etc/sysconfig/network-scripts/ifcfg-_INTERFACE_
+      echo 'GATEWAY=_GATEWAY_' >> /etc/sysconfig/network-scripts/ifcfg-_INTERFACE_
+
+      # plumb ipv6 address if it is present
+      if ! [ -z '_ADDRESSIPV6_' ]; then
+        # Remove parameters
+        sed -i '/IPV6INIT=/c\' /etc/sysconfig/network-scripts/ifcfg-_INTERFACE_ > /dev/null
+        sed -i '/IPV6ADDR=/c\' /etc/sysconfig/network-scripts/ifcfg-_INTERFACE_ > /dev/null
+        echo 'IPV6INIT=yes' >> /etc/sysconfig/network-scripts/ifcfg-_INTERFACE_
+        echo 'IPV6ADDR=_ADDRESSIPV6_' >> /etc/sysconfig/network-scripts/ifcfg-_INTERFACE_
+        if ! [ -z '_GATEWAYIPV6_' ]; then
+          sed -i '/IPV6_DEFAULTGW=/c\' /etc/sysconfig/network-scripts/ifcfg-_INTERFACE_ > /dev/null
+          echo 'IPV6_DEFAULTGW=_GATEWAYIPV6_' >> /etc/sysconfig/network-scripts/ifcfg-_INTERFACE_
+        fi
+      fi
+
+       # plumb extra configs if it is present
+      if ! [ -z '_EXTRA_' ]; then
+        _EXTRA_
+      fi
+
+      # can fail so not using function
+      ifdown _INTERFACE_
+      ifup /etc/sysconfig/network-scripts/ifcfg-_INTERFACE_
+      interfaceUp=$( ifconfig | grep _INTERFACE_ )
+      if [[ ${interfaceUp} == "" ]]; then
+        error "ERROR: Issue bring up the interface: _INTERFACE_"
+      fi
+
+runcmd:
+  - /run/cloud-init/plumb_ip_address.sh

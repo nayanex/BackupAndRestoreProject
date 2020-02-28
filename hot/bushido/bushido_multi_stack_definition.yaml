@@ -1,0 +1,381 @@
+heat_template_version: 2016-10-14
+
+description: >
+Template to deploy a multi compute instance of bushido stack.
+
+paramters:
+
+  index:
+    type: string
+    label: Stack index
+    description: Stack index used to get required attributes from a configuration lists.
+
+  deployment_id:
+    type: string
+    label: Bushido application deployment name
+    description: Bushido deployment name used as part of hostname.
+
+  vm_name:
+    type: string
+    label: Bushido VM name
+    description: VM name of Bushido application.
+
+  server_group:
+    type: striung
+    label: Defined server group policy
+    description: UUID reference to a defined server group policy to be used.
+
+  flavor:
+    type: string
+    label: Bushido flavor
+    description: Bushido flavor to use.
+
+  internal_network_name:
+    type: string
+    label: Bushido vm internal network name
+    description: Name of Bushido vm internal network.
+
+  internal_security_group_name:
+    type: string
+    label: Bushido vm internal network security group name
+    description: Name of Bushido vm internal network security group.
+
+  internal_ip_list:
+    type: comma_delimited_list
+    label: Bushido vm iternal network desired ips
+    description: Bushido vm internal network desired ips.
+
+  internal_netmask:
+    type: string
+    label: Internal netmask address
+    description: External netmask address that is used for Bushido server network configuration.
+
+  internal_gateway:
+    type: string
+    label: Internal gateway address
+    description: External gateway address that is used for Bushido server network configuration.
+
+  ntp_external_servers:
+    type: comma_delimited_list
+    label: A comma separated list of one or more ntp servers
+    description: A comma separated list of one or more ntp servers. These server addresses are used to configure NTP on the Bushido server.
+
+  external_network_name:
+    type: string
+    label: Bushido vm external network name
+    description: Name of Bushido vm external network.
+
+  external_security_group_name:
+    type: string
+    label: Bushido vm external network security group name
+    description: Name of Bushido vm external network security group.
+
+  external_ip_list:
+    type: comma_delimited_list
+    label: Bushido vm external network desired ips
+    description: Bushido vm external network desired ips.
+
+  external_netmask:
+    type: string
+    label: External netmask address
+    description: External netmask address that is available after bushido infrastructure stack is created.
+
+  external_gateway:
+    type: string
+    label: External gateway address
+    description: External gateway address that is available after bushido infrastructure stack is created.
+
+  root_volume_ids:
+    type: comma_delimited_list
+    label: Bushido root volume ids
+    description: Bushido root volume ids to attach. Single volume per stack.
+
+  data_volume_ids:
+    type: comma_delimited_list
+    label: Bushido data volume ids
+    description: Bushido data volume ids list in list to attach. Multiple volumes per stack.
+
+  log_volume_ids:
+    type: comma_delimited_list
+    label: Bushido log volume ids
+    description: Bushido log volume ids to attach. Single volume per stack.
+
+  message_volume_ids:
+    type: comma_delimited_list
+    label: Bushido message volume ids
+    description: Bushido message volume ids to attach. Single volume per stack.
+
+  elastic_volume_ids:
+    type: comma_delimited_list
+    label: Bushido elastic volume ids
+    description: Bushido elastic volume ids to attach. Single volume per stack.
+
+  yum_repo_name:
+    type: string
+    label: ENM yum repo name
+    description: ENM yum repo name where some RPMs are located which need to be installed.
+
+  yum_repo_ip:
+    type: string
+    label: ENM yum repo IP
+    description: ENM yum repo IP where some RPMs are located which need to be installed.
+
+  timezone:
+    type: string
+    label: Timezone to be set for Bushido instance
+    description: Timezone to be set for Bushido instance.
+
+  username:
+    type: string
+    label: Username to use to acquire auth token
+    description: Username to use to acquire auth token to download bushido artefacts. Located in OpenStack keystonerc.
+
+  password:
+    type: string
+    label: Password to use to acquire auth token
+    description: Username to use to acquire auth token to download bushido artefacts. Located in OpenStack keystonerc.
+    hidden: true
+
+  auth_url:
+    type: string
+    label: Auth url from which to acquire auth token
+    description: Auth url from which to acquire auth token to download bushido artefacts. Located in OpenStack keystonerc.
+
+  project_name:
+    type: string
+    label: Project name to use to acquire auth token
+    description: Project name to use to acquire auth token to download bushido artefacts. Located in OpenStack keystonerc.
+
+conditions:
+  leader: {equals: [{get_param: index}, 0]}
+
+resources:
+
+  internal_port:
+    type: ../../common/application/network/port.yaml
+    properties:
+      network_name: {get_param: internal_network_name}
+      fixed_ip_address: {get_param: [internal_ip_list, {get_param: index}]}
+      security_groups: [{get_param: internal_security_group_name}]
+
+  external_port:
+    type: ../../common/application/network/port.yaml
+    properties:
+      network_name: {get_param: external_network_name}
+      fixed_ip_address: {get_param: [external_ip_list, {get_param: index}]}
+      security_group_name: [{get_param: external_security_group_name}]
+
+  server:
+    type: OS::Nova::Server
+    properties:
+      name: {list_join: ['-', [ {get_param: vm_name}, {get_param: index} ] ]}
+      flavor: {get_param: flavor}
+      block_device_mapping_v2:
+        - delete_on_termination: false
+          boot_index: 0
+          volume_id: {get_param: [root_volume_ids, {get_param: index}]}
+      key_name: {get_param: key_name}
+      networks:
+        - port: {get_attr: [internal_port, resource.port]}
+        - port: {get_attr: [external_port, resource.port]}
+      user_data_format: SOFTWARE_CONFIG
+      user_data: {get_resource: cloud_config}
+      scheduler_hints:
+        group: {get_param: server_group}
+
+  cloud_config:
+    type: OS::Heat::CloudConfig
+    properties:
+      cloud_config:
+        get_file: application/cloud-init/growpart.yaml
+        str_replace:
+          params:
+            _REPO_NAME_: {get_param: yum_repo_name}
+            _REPO_IP_: {get_param: yum_repo_ip}
+          template: {get_file: application/cloud-init/yum_repo.yaml}
+        get_file: application/cloud-init/packages.yaml
+        str_replace:
+          params:
+            _TIMEZONE_: {get_param: timezone}
+          template: {get_file: ../common/application/cloud-init/timezone.yaml}
+        str_replace:
+          params:
+            _BUSHIDO_HOSTNAME_: {list_join: ['-', [ {get_param: deployment_id}, {get_param: vm_name}, {get_param: index} ] ]}
+          template: {get_file: application/cloud-init/hostname.yaml}
+        str_replace:
+          params:
+            _INTERFACE_: {get_param: external_port}
+            _ADDRESS_: {get_param: external_ip_address}
+            _NETMASK_: {get_param: external_netmask}
+            _GATEWAY_: {get_param: external_gateway}
+            _ADDRESSIPV6_: ''
+            _GATEWAYIPV6_: ''
+            _EXTRA_: {get_file: application/cloud-init/extra_external_network_config.yaml}
+          template: {get_file: ../common/application/cloud-init/plumb_ip_address.yaml}
+        get_file: application/cloud-init/private_key.yaml
+        str_replace:
+          params:
+            _NTP_SERVERS_: {get_param: ntp_external_servers}
+          template: {get_file: application/cloud-init/ntp.yaml}
+        str_replace:
+          params:
+            _REPO_IP_: {get_param: yum_repo_ip}
+            _BUSHIDO_INTERNAL_IP_: {get_param: internal_ip_address}
+            _BUSHIDO_HOSTNAME_: {get_param: name}
+            _BUSHIDO_EXTERNAL_IP_: {get_param: external_ip_address}
+          template: {get_file: application/cloud-init/host_lookup.yaml}
+
+  data_volumes_attachment:
+    type: OS::Heat::ResourceGroup
+    properties:
+      count: 3
+      resource_def:
+        type: infrastructure/volume/bushido_multi_volume_attachment.yaml
+        properties:
+          index: '%index%'
+          volume_ids: {get_param: [data_volume_ids, {get_param: index}]}
+          server: {get_resource: server}
+
+  log_volume_attachment:
+    type: OS::Cinder::VolumeAttachment
+    properties:
+      volume_id: {get_param: [log_volume_ids, {get_param: index}]}
+      instance_uuid: {get_resource: server}
+
+  message_volume_attachment:
+    type: OS::Cinder::VolumeAttachment
+    properties:
+      volume_id: {get_param: [message_volume_ids, {get_param: index}]}
+      instance_uuid: {get_resource: server}
+
+  elastic_volume_attachment:
+    type: OS::Cinder::VolumeAttachment
+    properties:
+      volume_id: {get_param: [elastic_volume_ids, {get_param: index}]}
+      instance_uuid: {get_resource: server}
+
+  extra_volumes_config:
+    type: OS::Heat::SoftwareConfig
+    properties:
+      group: script
+      config: {get_file: application/software-config/extra_volumes.sh}
+
+  extra_volumes_deployment:
+    type: OS::Heat::SoftwareDeployment
+    depends_on: [data_volumes_attachment, log_volume_attachment, message_volume_attachment, elastic_volume_attachment]
+    properties:
+      config: {get_resource: extra_volumes_config}
+      server: {get_resource: server}
+
+  data_directories_config:
+    type: OS::Heat::SoftwareConfig
+    properties:
+      group: script
+      config: {get_file: application/software-config/data_directories.sh}
+
+  data_directories_deployment:
+    type: OS::Heat::SoftwareDeployment
+    depends_on: extra_volumes_deployment
+    properties:
+      config: {get_resource: data_directories_config}
+      server: {get_resource: server}
+
+  download_bushido_software_config:
+    type: OS::Heat::SoftwareConfig
+    properties:
+      group: script
+      config: {get_file: application/software-config/download_bushido_software.sh}
+      inputs:
+      - name: OS_USERNAME
+      - name: OS_PASSWORD
+      - name: OS_AUTH_URL
+      - name: OS_PROJECT_NAME
+
+  download_bushido_software_deployment:
+    type: OS::Heat::SoftwareDeployment
+    properties:
+      config: {get_resource: download_bushido_software_config}
+      server: {get_resource: server}
+      input_values:
+        OS_USERNAME: {get_param: username}
+        OS_PASSWORD: {get_param: password}
+        OS_AUTH_URL: {get_param: auth_url}
+        OS_PROJECT_NAME: {get_param: project_name}
+
+  install_bushido_software_config:
+    type: OS::Heat::SoftwareConfig
+    properties:
+      group: script
+      config: {get_file: application/software-config/install_bushido_software.sh}
+
+  install_bushido_software_deployment:
+    type: OS::Heat::SoftwareDeployment
+    depends_on: download_bushido_software_deployment
+    properties:
+      config: {get_resource: install_bushido_software_config}
+      server: {get_resource: server}
+
+  configure_bushido_software_config:
+      type: OS::Heat::SoftwareConfig
+      properties:
+        group: script
+        config: {get_file: application/software-config/configure_bushido_software.sh}
+        inputs:
+        - name: HOSTNAME
+        - name: INTERNAL_IP
+        - name: INTERNAL_NETMASK
+        - name: INTERNAL_GATEWAY
+        - name: NTP_EXTERNAL_SERVER
+
+  configure_bushido_software_deployment:
+    type: OS::Heat::SoftwareDeployment
+    depends_on: install_bushido_software_deployment
+    properties:
+      config: {get_resource: configure_bushido_software_config}
+      server: {get_resource: server}
+      input_values:
+        HOSTNAME: {get_param: name}
+        INTERNAL_IP: {get_param: [internal_ip_list, {get_param: index}]}
+        INTERNAL_NETMASK: {get_param: internal_netmask}
+        INTERNAL_GATEWAY: {get_param: internal_gateway}
+        NTP_EXTERNAL_SERVER: {get_param: [ntp_external_servers, {get_param: index}]}
+
+  setup_bushido_cluster_config:
+    type: OS::Heat::SoftwareConfig
+    properties:
+      group: script
+      config: {get_file: application/software-config/setup_bushido_cluster.sh}
+      inputs:
+      - name: INTERNAL_IP
+      - name: INTERNAL_IP_NODE_TWO
+      - name: INTERNAL_IP_NODE_THREE
+    condition: leader
+
+  setup_bushido_cluster_deployment:
+    type: OS::Heat::SoftwareDeployment
+    depends_on: configure_bushido_software_deployment
+    properties:
+      config: {get_resource: setup_bushido_cluster_config}
+      server: {get_resource: server}
+      input_values:
+        INTERNAL_IP: {get_param: [internal_ip_list, 0]}
+        INTERNAL_IP_NODE_TWO: {get_param: [internal_ip_list, 1]}
+        INTERNAL_IP_NODE_THREE: {get_param: [internal_ip_list, 2]}
+    condition: leader
+
+  configure_iris_config:
+    type: OS::Heat::SoftwareConfig
+    properties:
+      group: script
+      config: {get_file: application/software-config/configure_iris.sh}
+      inputs:
+      - name: INTERNAL_IP
+
+  configure_iris_deployment:
+    type: OS::Heat::SoftwareDeployment
+    depends_on: setup_bushido_cluster_deployment
+    properties:
+      config: {get_resource: configure_iris_config}
+      server: {get_resource: server}
+      input_values:
+        INTERNAL_IP: {get_param: [internal_ip_list, {get_param: index}]}

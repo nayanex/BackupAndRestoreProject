@@ -1,0 +1,7 @@
+#cloud-config
+merge_how: 'list(append)+dict(recurse_array,no_replace)+str()'
+package_upgrade: true
+packages:
+  - curl
+  - tar
+  - rpm-build

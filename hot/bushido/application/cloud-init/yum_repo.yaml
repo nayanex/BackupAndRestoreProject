@@ -1,0 +1,8 @@
+#cloud-config
+merge_how: 'list(append)+dict(recurse_array,no_replace)+str()'
+yum_repos:
+  rhel17:
+    name: _REPO_NAME_
+    baseurl: http://_REPO_IP_/7/
+    enabled: 1
+    gpgcheck: 0

@@ -1,0 +1,28 @@
+heat_template_version: 2016-10-14
+
+description: >
+Common bootable cinder volume template with image
+
+parameters:
+  name:
+    type: string
+    label: Volume name
+    description: Volume name
+
+  size:
+    type: number
+    label: Volume size
+    description: Volume size defined in gigabytes
+
+  name:
+    type: string
+    label: Volume image name
+    description: The volume image name for bootable volume
+
+resources:
+  volume:
+    type: OS::Cinder::Volume
+    properties:
+      name: {get_param: name}
+      size: {get_param: size}
+      image: {get_param: name}

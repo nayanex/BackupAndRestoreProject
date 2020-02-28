@@ -1,0 +1,8 @@
+{
+  "tests/integration/env_setup/test_environment_setup_super.py": true, 
+  "tests/integration/test_gnupgManager.py": true, 
+  "tests/integration/test_local_backup_handler.py": true, 
+  "tests/integration/test_offsite_backup_handler.py": true, 
+  "tests/integration/test_utils.py": true, 
+  "tests/unit/test_utils.py": true
+}

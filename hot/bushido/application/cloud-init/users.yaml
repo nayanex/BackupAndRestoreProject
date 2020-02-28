@@ -1,0 +1,13 @@
+#cloud-config
+merge_how: 'list(append)+dict(recurse_array,no_replace)+str()'
+groups:
+  - bushido
+users:
+  - name: bushido
+    gecos: Bushido
+    primary_group: bushido
+    ssh_import_id: bushido
+    passwd: $6$rounds=4096$IB45ixb8TnN$cjvg3oqTwNERwzovYr8V/nRxRZFY3YcTM8Gffn6rrppvUxEYDfiNvM2FgBeivC4uODhjyd4L27KEj1Uk.cYm30
+    sudo: ALL=(ALL) NOPASSWD:ALL
+    shell: /bin/bash
+ssh_pwauth: True

@@ -1,0 +1,13 @@
+# .coveragerc to control coverage.py
+[run]
+branch = True
+source = backup
+
+[paths]
+source =
+    src/backup
+    .tox/*/lib/python*/site-packages/backup
+    .tox/pypy/site-packages/backup
+
+[html]
+directory = .backup_coverage_html_report

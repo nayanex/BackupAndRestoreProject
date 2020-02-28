@@ -1,0 +1,9 @@
+actionid: linters
+msg: getenv
+cmdargs: ['/usr/bin/python', '-m', 'virtualenv', '--python', '/usr/bin/python3', 'linters']
+
+Using base prefix '/usr'
+New python executable in /home/eholnay/ENMaaS-Backup/ecm-tools/backup/.tox/linters/bin/python3
+Also creating executable in /home/eholnay/ENMaaS-Backup/ecm-tools/backup/.tox/linters/bin/python
+Installing setuptools, pip, wheel...done.
+Running virtualenv with interpreter /usr/bin/python3

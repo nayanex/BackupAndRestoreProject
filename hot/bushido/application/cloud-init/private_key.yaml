@@ -1,0 +1,21 @@
+merge_how: 'list(append)+dict(recurse_array,no_replace)+str()'
+#runcmd:
+#  - [ sh, -c, "scp -i _PATH_TO_PRIVATE_KEY_ _PATH_TO_PRIVATE_KEY_ cloud-user@_ADDRESS_:/var/tmp" ]
+#  - [ sh, -c, "ssh -i _PATH_TO_PRIVATE_KEY_ _ADDRESS_
+#  mkdir -p ~/.ssh
+#  && chmod 700 ~/.ssh
+#  && cp /var/tmp/key.pem ~/.ssh
+#  && chmod 600 ~/.ssh/key.pem
+#  && mkdir -p ~bushido/.ssh
+#  && chmod 700 ~bushido/.ssh
+#  && mv /var/tmp/key.pem ~bushido/.ssh
+#  && chmod 600 ~bushido/.ssh/key.pem
+#  && chown -R bushido:bushido ~bushido" ]
+runcmd:
+  - [ sh, -c, "mkdir -p -m 700 ~/.ssh" ]
+#  - [ sh, -c, "cp /var/tmp/key.pem ~/.ssh" ]
+#  - [ sh, -c, "chmod 600 ~/.ssh/key.pem" ]
+  - [ sh, -c, "mkdir -p -m 700 ~bushido/.ssh" ]
+#  - [ sh, -c, "mv /var/tmp/key.pem ~bushido/.ssh" ]
+#  - [ sh, -c, "chmod 600 ~bushido/.ssh/key.pem" ]
+  - [ sh, -c, "chown -R bushido:bushido ~bushido" ]

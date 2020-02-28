@@ -1,0 +1,26 @@
+parameters:
+  deployment_id: cloud5b
+  flavor: flavor_8vC20M_RV
+  internal_network_name: enm_internal_network_RV_C5B03
+  internal_security_group_name: enm_internal_security_group_RV_C5B03
+  internal_ip_list: ,
+  internal_netmask: 255.255.248.0
+  internal_gateway: 10.10.0.1
+  ntp_external_servers: ,
+  external_network_name: Provider_Network1
+  external_security_group_name: enm_external_security_group_RV_C5B03
+  external_ip_list: ,
+  external_netmask: 255.255.255.0
+  external_gateway: 255.255.255.0
+  root_volume_id: 9865c733-20e1-4c22-8e31-a31b27dd5da7
+  data_volume_ids: be4fd5bb-f118-4bf8-9111-b5487eff74e6,e18b4274-b2a1-4925-8429-b14785333f06,2c9dbcf7-23b4-472c-8b13-eb6fcd89f824
+  log_volume_id: 577c7f88-3f3d-4ae2-8bd8-3a7c7e4723ab
+  message_volume_id: a7cfda58-f250-4a2f-b312-24210994c340
+  elastic_volume_id: ca891820-74c9-4235-971b-b6750c7eae23
+  yum_repo_name: ENM RHEL 7 Repository
+  yum_repo_ip: 10.10.0.13
+  username: eshanco
+  password: N3wP@55w0rd
+  auth_url: http://131.160.194.225:5000/v3
+  project_name: NMaaS_C5B14
+    

@@ -1,0 +1,11 @@
+sed -i '/ONBOOT=/c\' /etc/sysconfig/network-scripts/ifcfg-_INTERFACE_ > /dev/null
+sed -i '/TYPE=/c\' /etc/sysconfig/network-scripts/ifcfg-_INTERFACE_ > /dev/null
+sed -i '/USERCTL=/c\' /etc/sysconfig/network-scripts/ifcfg-_INTERFACE_ > /dev/null
+sed -i '/PEERDNS=/c\' /etc/sysconfig/network-scripts/ifcfg-_INTERFACE_ > /dev/null
+sed -i '/MTU=/c\' /etc/sysconfig/network-scripts/ifcfg-_INTERFACE_ > /dev/null
+
+echo 'ONBOOT=yes' >> /etc/sysconfig/network-scripts/ifcfg-_INTERFACE_
+echo 'TYPE=Ethernet' >> /etc/sysconfig/network-scripts/ifcfg-_INTERFACE_
+echo 'USERCTL=yes' >> /etc/sysconfig/network-scripts/ifcfg-_INTERFACE_
+echo 'PEERDNS=yes' >> /etc/sysconfig/network-scripts/ifcfg-_INTERFACE_
+echo 'MTU=1496' >> /etc/sysconfig/network-scripts/ifcfg-_INTERFACE_
