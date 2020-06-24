@@ -389,8 +389,7 @@ def usage(logger, exit_code=ExitCodes.SUCCESS.value):
                                             Overview:
         ============================================================================================
         This script aims at automating the process for off-site upload and download of
-        the ENMaaS backup sets, according to the requirements from the Jira issue NMAAS-516
-        (https://jira-nam.lmera.ericsson.se/browse/NMAAS-516).
+        the ENMaaS backup sets.
 
         It basically does the following for each option:
 
